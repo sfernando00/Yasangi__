@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yasangi, Pick a Date 😭😂</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0; min-height: 100vh; display:flex; align-items:center; justify-content:center;
+  padding:24px; font-family:"Segoe UI", Arial, sans-serif;
+  background:linear-gradient(135deg,#fff8e8,#ffeef3);
+  color:#3f3540;
+}
+.card {
+  width:min(560px,100%); background:#fff; border-radius:26px; padding:38px 30px;
+  text-align:center; box-shadow:0 15px 45px rgba(80,60,70,.13);
+}
+.emoji { font-size:44px; }
+h1 { margin:8px 0 18px; color:#5d5360; font-size:29px; }
+.message {
+  font-size:16px; line-height:1.7; margin:0 auto 22px; max-width:470px;
+}
+.sorry {
+  background:#fff7f0; border-radius:17px; padding:17px 19px; margin-bottom:22px;
+  line-height:1.65; text-align:left;
+}
+.sorry strong { color:#c45b65; }
+label { display:block; font-weight:700; margin-bottom:9px; }
+input[type="date"] {
+  width:100%; max-width:330px; padding:13px; border:1.5px solid #d9b8c0;
+  border-radius:12px; font-size:16px; color:#40353b; background:#fffafb;
+}
+button {
+  margin-top:17px; border:0; border-radius:999px; padding:14px 27px;
+  background:#6d6270; color:white; font-size:16px; font-weight:700; cursor:pointer;
+}
+button:hover { background:#514753; }
+.small { margin-top:17px; font-size:12px; color:#8b7d84; }
+#success { display:none; margin-top:17px; color:#55745f; font-weight:700; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="emoji">🥺👉👈</div>
+  <h1>Yasangi, please pick a date 😂</h1>
+
+  <div class="sorry">
+    <strong>Okay, I admit it. I messed up. 😭</strong><br><br>
+    Yasangi, I'm really sorry I forgot your birthday. That was genuinely a bad thing
+    and I feel really bad about it. And honestly, I don't usually feel this guilty
+    when I forget other people's birthdays… but somehow forgetting <b>your</b> birthday
+    is making me regret it so much. 😭
+  </div>
+
+  <p class="message">
+    So instead of writing a whole essay and annoying you even more... 😂<br>
+    <b>Pick a date.</b><br>
+    Let's go out, eat something, talk nonsense and have some fun like we always do. 🫶
+  </p>
+
+  <form action="https://formsubmit.co/dinithisachinthana@gmail.com" method="POST"
+        onsubmit="document.getElementById('success').style.display='block';">
+    <input type="hidden" name="_subject" value="😂 Yasangi picked a date!">
+    <input type="hidden" name="_cc" value="yasangi@gmail.com">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+
+    <label for="date">Choose our date 📅</label>
+    <input id="date" type="date" name="Chosen Date" required>
+    <br>
+    <button type="submit">Okay, I'll take you out 😂</button>
+  </form>
+
+  <div id="success">Date sent! Now you can't escape. 😂📩</div>
+  <div class="small">Best friends are allowed to be angry. But not forever. 😌</div>
+</div>
+
+<script>
+const dateInput = document.getElementById("date");
+const today = new Date();
+today.setDate(today.getDate() + 1);
+dateInput.min = today.toISOString().split("T")[0];
+</script>
+</body>
+</html>
